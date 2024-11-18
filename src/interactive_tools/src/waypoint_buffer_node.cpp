@@ -91,6 +91,21 @@ void WaypointBufferNode::waypointCmdCallback(const std_msgs::String& waypoint_cm
     publishWaypoints();
     this->mode_ = waypoint_cmd.data;
   }
+  else if (waypoint_cmd.data == "Skip")
+  {
+    if (this->ptr_curr_ + 1 < this->waypoints_.size())
+    {
+      this->ptr_curr_++;
+    }
+    publishWaypoints();
+    // this->mode_ = waypoint_cmd.data;
+  }
+  else if (waypoint_cmd.data == "Loop")
+  {
+    this->ptr_curr_ = 0;
+    publishWaypoints();
+    // this->mode_ = waypoint_cmd.data;
+  }
   else
   {
     ROS_WARN("Waypoint command not supported");

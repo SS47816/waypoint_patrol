@@ -58,6 +58,8 @@ class simplePanel : public rviz::Panel
     void on_button_remove_clicked();
     void on_button_start_clicked();
     void on_button_clear_clicked();
+    void on_button_skip_clicked();
+    void on_button_loop_clicked();
 
  protected:
   // UI pointer

@@ -29,6 +29,8 @@ namespace rviz_panel
         connect(ui_->pushButton_remove, SIGNAL(clicked()), this, SLOT(on_button_remove_clicked()));
         connect(ui_->pushButton_start, SIGNAL(clicked()), this, SLOT(on_button_start_clicked()));
         connect(ui_->pushButton_clear, SIGNAL(clicked()), this, SLOT(on_button_clear_clicked()));
+        connect(ui_->pushButton_skip, SIGNAL(clicked()), this, SLOT(on_button_skip_clicked()));
+        connect(ui_->pushButton_loop, SIGNAL(clicked()), this, SLOT(on_button_loop_clicked()));
 
         // Initialization
         waypoint_cmd_msg_.data = "";
@@ -63,21 +65,20 @@ namespace rviz_panel
         this->waypoint_cmd_msg_.data = "Clear";
         this->pub_waypoint_cmd_.publish(this->waypoint_cmd_msg_);
     }
-
-    // void simplePanel::on_button_regen_clicked()
-    // {
-    //     ROS_INFO_STREAM("Respawning Random Objects");
-    //     ui_->label_status->setText("Please select a goal pose");
-    //     this->regen_cmd_msg_.data = 1;
-    //     this->pub_respawn_.publish(this->regen_cmd_msg_);
-    // }
-    // void simplePanel::on_button_clear_clicked()
-    // {
-    //     ROS_INFO_STREAM("Clearing Random Objects");
-    //     ui_->label_status->setText("Please select a goal pose");
-    //     this->regen_cmd_msg_.data = 0;
-    //     this->pub_respawn_.publish(this->regen_cmd_msg_);
-    // }
+    void simplePanel::on_button_skip_clicked()
+    {
+        ROS_INFO_STREAM("Skipping current waypoint...");
+        ui_->label_status->setText("Starting Mission");
+        this->waypoint_cmd_msg_.data = "Skip";
+        this->pub_waypoint_cmd_.publish(this->waypoint_cmd_msg_);
+    }
+    void simplePanel::on_button_loop_clicked()
+    {
+        ROS_INFO_STREAM("Looping back to the first waypoint...");
+        ui_->label_status->setText("Starting Mission");
+        this->waypoint_cmd_msg_.data = "Loop";
+        this->pub_waypoint_cmd_.publish(this->waypoint_cmd_msg_);
+    }
 
     /**
      *  Save all configuration data from this panel to the given
