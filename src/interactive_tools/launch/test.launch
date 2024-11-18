@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find interactive_tools)/rviz/test.rviz"/> -->
+    <!-- <rosparam command="load" file="$(find interactive_tools)/config/config.yaml" /> -->
+    <param name="/use_sim_time" value="true" />
+
+    <node name="waypoint_buffer_node" pkg="interactive_tools" type="waypoint_buffer_node" output="screen" respawn="true"/>
+</launch>

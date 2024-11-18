@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/shuo/me5413_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/shuo/me5413_ws/src/waypoint_patrol/src/interactive_tools/include/**",
+        "/home/shuo/me5413_ws/src/waypoint_patrol/src/me5413_world/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

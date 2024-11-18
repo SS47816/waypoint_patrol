@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/shuo/me5413_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/shuo/ss_ws/fiss_plus_planner",
+        "/home/shuo/ss_ws/PredictionwithFiss"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/shuo/me5413_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/shuo/ss_ws/fiss_plus_planner",
+        "/home/shuo/ss_ws/PredictionwithFiss"
+    ]
+}
